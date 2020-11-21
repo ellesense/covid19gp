@@ -3,7 +3,13 @@
 ## Models
 
 - User
-- Entry
+- Entry:
+
+  - name (user's legal name): string
+  - question_one: boolean
+  - question_two: boolean
+  - question_three: boolean
+  - question_four: boolean
 
 - Ruby version
 

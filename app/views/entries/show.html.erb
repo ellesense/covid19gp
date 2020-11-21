@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question one:</strong>
+  <%= @entry.question_one %>
+</p>
+
+<p>
+  <strong>Question two:</strong>
+  <%= @entry.question_two %>
+</p>
+
+<p>
+  <strong>Question three:</strong>
+  <%= @entry.question_three %>
+</p>
+
+<p>
+  <strong>Question four:</strong>
+  <%= @entry.question_four %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @entry.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
