@@ -1,29 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Question one:</strong>
-  <%= @entry.question_one %>
-</p>
+<h1>Thank you!</h1>
 
-<p>
-  <strong>Question two:</strong>
-  <%= @entry.question_two %>
-</p>
+<hr>
 
-<p>
-  <strong>Question three:</strong>
-  <%= @entry.question_three %>
-</p>
+<% if @entry.question_one == true || @entry.question_two == true || @entry.question_three == true || @entry.question_four == true %>
+  <h5 style="color: red">You have answered "Yes" to one of the questions.</h5>
+  <h5 style="color: red">Please do not attend work</h5>
+  <h5 style="color: red">contact your direct Supervisor for further direction.</h5>
+<% else %>
+  <h5>Please stay safe.</h5>
+<% end %>
 
-<p>
-  <strong>Question four:</strong>
-  <%= @entry.question_four %>
-</p>
+<div>
+<p>LINK TO MY ENTRIES</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @entry.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to 'BACK', entries_path %>
