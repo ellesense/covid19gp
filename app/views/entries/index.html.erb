@@ -16,7 +16,7 @@
 
 
   <ul>
-    <li><%= entry.created_at.getlocal.strftime("%b. %d. %Y. %l:%M %p. %A.") %></li>
+    <li><%= entry.created_at.localtime.strftime("%b. %d. %Y. %l:%M %p. %A.") %></li>
   </ul>
   <% end %>
   <hr>

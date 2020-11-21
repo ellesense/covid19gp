@@ -4,8 +4,8 @@
   <div class="card-body">
     <h6 class="card-subtitle mb-2 text-muted"><%= @user.email %></h6>
     <hr>
-    <p class="card-text">Joined on: <%= @user.created_at.getlocal.strftime("%m. %d. %Y.") %></p>
-    <p class="card-text">Edited account information on: <%= @user.updated_at.getlocal.strftime("%m. %d. %Y.") %></p>
+    <p class="card-text">Joined on: <%= @user.created_at.localtime.strftime("%m. %d. %Y.") %></p>
+    <p class="card-text">Edited account information on: <%= @user.updated_at.localtime.strftime("%m. %d. %Y.") %></p>
     <%= link_to 'Edit my account', edit_user_registration_path, class: 'btn btn-warning' %>
   </div>
 <hr>
@@ -20,7 +20,7 @@
   <% @user.entries.each do |entry| %>
     <li class="list-group-item">
       <div>
-          <%= entry.created_at.getlocal.strftime("%B. %d. %Y. %l:%M %p") %>
+          <%= entry.created_at.localtime.strftime("%B. %d. %Y. %l:%M %p") %>
       </div>
     </li>
   <% end %>
