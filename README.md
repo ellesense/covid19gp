@@ -3,4 +3,4 @@
 ## functionality
 
 - add approved attribute to users. admin has to approve user before entries can be made
-- fix error messages
+- add department-specific admins, so each admin can only view the staff in the particular department

@@ -7,7 +7,7 @@
 <% @users.each do |user| %>
   <p style="font-size: 1.1rem; font-weight: bold"><%= user.name %></p>
 
-  <p>Daily questionnaire was completed on the following days:</p>
+  <p>Daily health check responses were completed on the following days:</p>
   <% user.entries.each do |entry| %>
 
     <% if entry.created_at.to_date === Time.now.strftime("%Y-%m-%d") %>
