@@ -13,7 +13,7 @@ class EntriesController < ApplicationController
   end
 
   def show
-    if current_user !== @entry.user
+    if current_user != @entry.user
       redirect_to root_path, notice: "You don't have the permission to view this page."      
     end
   end
@@ -31,7 +31,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to @entry, notice: 'Your daily health check response was successfully recorded.' }
       else
         format.html { render :new }
       end

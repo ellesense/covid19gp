@@ -2,6 +2,5 @@
 
 ## functionality
 
-- Get rid of 'edit page'
-- admin has to approve user
+- add approved attribute to users. admin has to approve user before entries can be made
 - fix error messages
