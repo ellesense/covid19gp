@@ -5,6 +5,7 @@
 <hr>
 
 <% if @entry.question_one == true || @entry.question_two == true || @entry.question_three == true || @entry.question_four == true %>
+  <h3 style="background-color: red; color: white">WAIT!</h3>
   <h5 style="color: red">You have answered "Yes" to one of the questions.</h5>
   <h5 style="color: red">Please do not attend work</h5>
   <h5 style="color: red">contact your direct Supervisor for further direction.</h5>
@@ -12,7 +13,36 @@
   <h5>Please stay safe.</h5>
 <% end %>
 
-<div>
-<p>LINK TO MY ENTRIES</p>
+<hr>
 
-<%= link_to 'BACK', entries_path %>
+<div>
+  <h5>1. Are you experiencing any of the following new or worsening symptoms?</h5>
+  <% if @entry.question_one %>
+    <p style="font-size: 1rem; color: red">Yes</p>
+  <% else %>
+    <p style="font-size: 1rem">No</p>
+  <% end %>
+  <hr>
+  <h5>2. Are you experiencing any of the following new or worsening symptoms?</h5>
+  <% if @entry.question_two %>
+    <p style="font-size: 1rem; color: red">Yes</p>
+  <% else %>
+    <p style="font-size: 1rem">No</p>
+  <% end %>
+  <hr>
+  <h5>1. Are you experiencing any of the following new or worsening symptoms?</h5>
+  <% if @entry.question_three %>
+    <p style="font-size: 1rem; color: red">Yes</p>
+  <% else %>
+    <p style="font-size: 1rem">No</p>
+  <% end %>
+  <hr>
+  <h5>1. Are you experiencing any of the following new or worsening symptoms?</h5>
+  <% if @entry.question_four %>
+    <p style="font-size: 1rem; color: red">Yes</p>
+  <% else %>
+    <p style="font-size: 1rem">No</p>
+  <% end %>
+</div>
+
+<div>
