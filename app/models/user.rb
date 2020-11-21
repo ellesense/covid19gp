@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   has_many :entries
 
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+
+
   # validate :email_domain
 
   # def email_domain
