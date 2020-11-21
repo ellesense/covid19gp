@@ -12,24 +12,76 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :question_one %>
-    <%= form.check_box :question_one %>
+  <h5>1. Are you experiencing any of the following new or worsening symptoms?</h5>
+  <ul>
+    <li style="font-size: 1rem">Fever or chills</li>
+    <li style="font-size: 1rem">Nausea and/or vomitting</li>
+    <li style="font-size: 1rem">Cough</li>
+    <li style="font-size: 1rem">Sore throat</li>
+    <li style="font-size: 1rem">Extreme fatigue or tiredness</li>
+    <li style="font-size: 1rem">Body aches</li>
+    <li style="font-size: 1rem">Difficulty breathing</li>
+    <li style="font-size: 1rem">Loss of appetite</li>
+    <li style="font-size: 1rem">Diarrhea</li>
+    <li style="font-size: 1rem">Headache</li>
+    <li style="font-size: 1rem">Loss of sense of smell or taste</li>
+  </ul>
+    <div style="font-size: 1.5rem; margin: 12px 0px" class="btn btn-primary">
+      <%= form.label :question_one, 'YES' %>
+      <%= form.check_box :question_one %>
+      <label for="question-one-no" style="margin-left: 40px">
+        NO
+      </label>
+      <input type="checkbox" id="question-one-no">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :question_two %>
-    <%= form.check_box :question_two %>
-  </div>
+<hr>  
 
   <div class="field">
-    <%= form.label :question_three %>
-    <%= form.check_box :question_three %>
+  <h5>2. Have you travelled outside of Canada, including the United States, within the last 14 days?</h5>
+    <div style="font-size: 1.5rem; margin: 12px 0px" class="btn btn-primary">
+      <%= form.label :question_two, 'YES' %>
+      <%= form.check_box :question_two %>
+
+      <label for="question-two-no" style="margin-left: 40px">
+        NO
+      </label>
+      <input type="checkbox" id="question-two-no">
+    </div>
   </div>
 
+<hr>
+
   <div class="field">
-    <%= form.label :question_four %>
-    <%= form.check_box :question_four %>
+  <h5>3. Have you been idenfitied as a close contact of a COVID-positive case by Public Health?</h5>
+    <div style="font-size: 1.5rem; margin: 12px 0px" class="btn btn-primary">
+      <%= form.label :question_three, 'YES' %>
+      <%= form.check_box :question_three %>
+
+      <label for="question-three-no">
+        NO
+      </label>
+      <input type="checkbox" id="question-three-no" style="margin-left: 40px">
+    </div>
   </div>
+
+<hr>
+
+  <div class="field">
+  <h5>4. Have you been told to self-isolate by Public Health?</h5>
+    <div style="font-size: 1.5rem; margin: 12px 0px" class="btn btn-primary">
+      <%= form.label :question_four, 'YES' %>
+      <%= form.check_box :question_four %>
+
+      <label for="question-four-no">
+        NO
+      </label>
+      <input type="checkbox" id="question-four-no" style="margin-left: 40px">
+    </div>
+  </div>
+
+<hr>
 
   <div class="field">
     <%= form.label :user_id %>
@@ -40,3 +92,9 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<hr>
+
+<p style="font-size: 1rem">If you have answered yes to any of these questions, please do not attend work, contact your direct Supervisor for further direction.</p>
+
+<hr>

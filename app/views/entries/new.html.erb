@@ -1,5 +1,8 @@
-<h1>New Entry</h1>
+<h1><%= Time.now.getlocal.strftime("%A - %H:%M") %></h1>
+<h4><%= Time.now.getlocal.strftime("%B. %d. %Y") %></h4>
+
+<hr>
 
 <%= render 'form', entry: @entry %>
 
-<%= link_to 'Back', entries_path %>
+<%= link_to 'CANCEL', entries_path, class: "btn btn-danger" %>
