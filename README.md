@@ -8,4 +8,4 @@
 - Must sign in to do anything (other than viewing the home page)
 - Redirect user to 'creat new entry' page upon joining || signing in
 - add 'name' attribute to user
-- disable 'delete entry'
+- admin has to approve user

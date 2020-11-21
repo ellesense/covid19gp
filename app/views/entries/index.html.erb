@@ -1,35 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Entries</h1>
+<h1>All Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Question one</th>
-      <th>Question two</th>
-      <th>Question three</th>
-      <th>Question four</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<hr>
 
-  <tbody>
-    <% @entries.each do |entry| %>
-      <tr>
-        <td><%= entry.question_one %></td>
-        <td><%= entry.question_two %></td>
-        <td><%= entry.question_three %></td>
-        <td><%= entry.question_four %></td>
-        <td><%= entry.user_id %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @users.each do |user| %>
+  <p style="font-size: 1.1rem; font-weight: bold"><%= user.email %></p>
+
+  <p>Daily questionnaire was completed on the following days:</p>
+  <% user.entries.each do |entry| %>
+  <ul>
+    <li><%= entry.created_at.getlocal.strftime("%b. %d. %Y. %l:%M %p. %A.") %></li>
+  </ul>
+  <% end %>
+  <hr>
+<% end %>
 
 <br>
-
-<%= link_to 'New Entry', new_entry_path %>
