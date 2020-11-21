@@ -13,6 +13,9 @@ class EntriesController < ApplicationController
   end
 
   def show
+    if current_user !== @entry.user
+      redirect_to root_path, notice: "You don't have the permission to view this page."      
+    end
   end
 
   def new
@@ -55,6 +58,10 @@ class EntriesController < ApplicationController
   private
     def set_entry
       @entry = Entry.find(params[:id])
+
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path, notice: "The page you are looking does not exist."
+
     end
 
     def entry_params
