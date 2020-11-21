@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">COVID-19: RPT</a>
+  <a class="navbar-brand" href="#">COVID-19: REPORT</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -14,35 +14,20 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"
-          >home <span class="sr-only">(current)</span></a
-        >
+      <li class="nav-item">
+        <%= link_to 'Create new entry for today', new_entry_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">something here</a>
+        <%= link_to 'Join', new_user_registration_path, class: 'nav-link' %>
       </li>
-      <li>
-            <%#= INSERT LINK HERE %>
+      <li class="nav-item">
+        <%= link_to 'Sign in', user_session_path, class: 'nav-link' %>
       </li>
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          more
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">join</a>
-          <a class="dropdown-item" href="#">log in</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">my page</a>
-        </div>
+      <li class="nav-item">
+        <%= link_to 'Sign out', destroy_user_session_path, class: 'nav-link', method: :delete %>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">my page</a>
       </li>
     </ul>
   </div>
