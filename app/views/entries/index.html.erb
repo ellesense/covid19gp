@@ -1,6 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>All Users</h1>
+<h1>Daily Health Check Responses</h1>
+<p>All users:
+<% @users.each do |u| %>
+  <%= u.name %>
+<% end %>
+</p>
+
+<p>The following people have recorded response today:
+<% @entries_today.each do |e| %>
+  <%= e.user.name  %>
+<% end %>
+</p>
 
 <hr>
 
@@ -16,7 +27,14 @@
 
 
   <ul>
-    <li><%= entry.created_at.localtime.strftime("%b. %d. %Y. %l:%M %p. %A.") %></li>
+    <li>
+      <%= entry.created_at.localtime.strftime("%b. %d. %Y. %l:%M %p. %A.") %>
+      <br>
+      <% if entry.question_one || entry.question_two || entry.question_three || entry.question_four %>
+        <span style="color: red">Answered "YES" to one of the questions.</span>
+      <% end %>
+
+    </li>
   </ul>
   <% end %>
   <hr>

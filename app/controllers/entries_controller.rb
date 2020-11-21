@@ -7,6 +7,7 @@ class EntriesController < ApplicationController
       redirect_to root_path, notice: "You don't have the permission to view this page."
     else
       @entries = Entry.all
+      @entries_today = Entry.where("created_at >= ?", Time.zone.now.beginning_of_day)
       @users = User.all  
     end
 
