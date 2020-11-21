@@ -1,0 +1,27 @@
+<h1>Hello, <%= @user.email %></h1>
+<hr>
+
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted"><%= @user.email %></h6>
+    <hr>
+    <p class="card-text">Joined on: <%= @user.created_at.getlocal.strftime("%m. %d. %Y.") %></p>
+    <p class="card-text">Edited account information on: <%= @user.updated_at.getlocal.strftime("%m. %d. %Y.") %></p>
+    <%= link_to 'Edit my account', edit_user_registration_path, class: 'btn btn-warning' %>
+  </div>
+<hr>
+
+<% if @user.entries.length > 1 %>
+  <h4>My daily entries</h4>
+<% else %>
+  <h4>My daily entry</h4>
+<% end %>
+
+<ul class="list-group list-group-flush">
+  <% @user.entries.each do |entry| %>
+    <li class="list-group-item">
+      <div>
+          <%= entry.created_at.getlocal.strftime("%B. %d. %Y. %l:%M %p") %>
+      </div>
+    </li>
+  <% end %>
+</ul>
