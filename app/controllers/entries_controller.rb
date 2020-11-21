@@ -5,6 +5,7 @@ class EntriesController < ApplicationController
   def index
     @entries = Entry.all
     @users = User.all
+
   end
 
   def show

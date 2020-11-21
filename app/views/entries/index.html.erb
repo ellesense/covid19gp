@@ -5,10 +5,16 @@
 <hr>
 
 <% @users.each do |user| %>
-  <p style="font-size: 1.1rem; font-weight: bold"><%= user.email %></p>
+  <p style="font-size: 1.1rem; font-weight: bold"><%= user.name %></p>
 
   <p>Daily questionnaire was completed on the following days:</p>
   <% user.entries.each do |entry| %>
+
+    <% if entry.created_at.to_date === Time.now.strftime("%Y-%m-%d") %>
+      <p>Submitted.</p>
+    <% end %>
+
+
   <ul>
     <li><%= entry.created_at.getlocal.strftime("%b. %d. %Y. %l:%M %p. %A.") %></li>
   </ul>
@@ -17,3 +23,4 @@
 <% end %>
 
 <br>
+

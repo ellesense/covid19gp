@@ -8,6 +8,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :name, label: 'Full name (ex. Jane Doe)',
+                required: true,
+                autofocus: true,
+                hint: ("Your name and daily health checks will not be visible to others except the admin.") %>
+
     <%= f.input :email,
                 required: true,
                 hint: ("You will use this email address to sign in."),

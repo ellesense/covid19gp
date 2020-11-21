@@ -27,10 +27,11 @@
     <li style="font-size: 1rem">Loss of sense of smell or taste</li>
   </ul>
     <div style="font-size: 1.1rem; margin: 12px 0px; text-align: right"">
-      <%= form.label :question_one, 'YES', 
-      style: 'position: relative; vertical-align: middle; bottom: 1px;' %>
+      <%= form.label :question_one, 'YES',
+      style: 'position: relative; vertical-align: middle; bottom: 1px;'
+      %>
       
-      <%= form.check_box :question_one %>
+      <%= form.check_box :question_one, {checked: true} %>
       <label for="question-one-no" 
       style="margin-left: 40px; position: relative; vertical-align: middle; bottom: 1px;">
         NO
@@ -47,7 +48,7 @@
       <%= form.label :question_two, 'YES',
       style: 'position: relative; vertical-align: middle; bottom: 1px;' %>
 
-      <%= form.check_box :question_two %>
+      <%= form.check_box :question_two, {checked: true} %>
       <label for="question-two-no"
       style="margin-left: 40px; position: relative; vertical-align: middle; bottom: 1px;">
         NO
@@ -64,7 +65,7 @@
       <%= form.label :question_three, 'YES',
       style: 'position: relative; vertical-align: middle; bottom: 1px;' %>
 
-      <%= form.check_box :question_three %>
+      <%= form.check_box :question_three, {checked: true} %>
 
       <label for="question-three-no"
       style="margin-left: 40px; position: relative; vertical-align: middle; bottom: 1px;">
@@ -82,7 +83,7 @@
       <%= form.label :question_four, 'YES',
       style: 'position: relative; vertical-align: middle; bottom: 1px;' %>
 
-      <%= form.check_box :question_four %>
+      <%= form.check_box :question_four, {checked: true} %>
 
       <label for="question-four-no"
       style="margin-left: 40px; position: relative; vertical-align: middle; bottom: 1px;">

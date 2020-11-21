@@ -5,44 +5,74 @@
 <hr>
 
 <% if @entry.question_one == true || @entry.question_two == true || @entry.question_three == true || @entry.question_four == true %>
-  <h3 style="background-color: red; color: white">WAIT!</h3>
+  <h3 style="color: red">WAIT!</h3>
   <h5 style="color: red">You have answered "Yes" to one of the questions.</h5>
-  <h5 style="color: red">Please do not attend work</h5>
+  <h5 style="color: red">Please do not attend work.</h5>
   <h5 style="color: red">contact your direct Supervisor for further direction.</h5>
 <% else %>
-  <h5>Please stay safe.</h5>
+  <h5 style="padding: 15px 0px; color: blue">Please stay safe.</h5>
 <% end %>
 
 <hr>
 
 <div>
-  <h5>1. Are you experiencing any of the following new or worsening symptoms?</h5>
-  <% if @entry.question_one %>
-    <p style="font-size: 1rem; color: red">Yes</p>
-  <% else %>
-    <p style="font-size: 1rem">No</p>
-  <% end %>
+<br />
+<h6>Your responses on <%= Time.now.getlocal.strftime("%B. %d. %Y") %></h6>
+
+<br />
+
+<h6>1. Are you experiencing any of the following new or worsening symptoms?
+    <% if @entry.question_one %>
+      <span>Yes</span>
+    <% else %>
+      <span>No</span>
+    <% end %>
+</h6>
+  <ul>
+    <li style="font-size: .9rem">Fever or chills</li>
+    <li style="font-size: .9rem">Nausea and/or vomitting</li>
+    <li style="font-size: .9rem">Cough</li>
+    <li style="font-size: .9rem">Sore throat</li>
+    <li style="font-size: .9rem">Extreme fatigue or tiredness</li>
+    <li style="font-size: .9rem">Body aches</li>
+    <li style="font-size: .9rem">Difficulty breathing</li>
+    <li style="font-size: .9rem">Loss of appetite</li>
+    <li style="font-size: .9rem">Diarrhea</li>
+    <li style="font-size: .9rem">Headache</li>
+    <li style="font-size: .9rem">Loss of sense of smell or taste</li>
+  </ul>
+
+
   <hr>
-  <h5>2. Are you experiencing any of the following new or worsening symptoms?</h5>
-  <% if @entry.question_two %>
-    <p style="font-size: 1rem; color: red">Yes</p>
-  <% else %>
-    <p style="font-size: 1rem">No</p>
-  <% end %>
+
+  <h6>2. Are you experiencing any of the following new or worsening symptoms?  
+      <% if @entry.question_two %>
+        <span>Yes</span>
+      <% else %>
+        <span>No</span>
+      <% end %>
+  </h6>
+
   <hr>
-  <h5>1. Are you experiencing any of the following new or worsening symptoms?</h5>
-  <% if @entry.question_three %>
-    <p style="font-size: 1rem; color: red">Yes</p>
-  <% else %>
-    <p style="font-size: 1rem">No</p>
-  <% end %>
+
+  <h6>3. Have you been idenfitied as a close contact of a COVID-positive case by Public Health?
+      <% if @entry.question_three %>
+        <span>Yes</span>
+      <% else %>
+        <span>No</span>
+      <% end %>  
+  </h6>
+  
   <hr>
-  <h5>1. Are you experiencing any of the following new or worsening symptoms?</h5>
-  <% if @entry.question_four %>
-    <p style="font-size: 1rem; color: red">Yes</p>
-  <% else %>
-    <p style="font-size: 1rem">No</p>
-  <% end %>
+
+  <h6>4. Have you been told to self-isolate by Public Health?
+      <% if @entry.question_four %>
+        <span>Yes</span>
+      <% else %>
+        <span>No</span>
+      <% end %>
+  </h6>
+
 </div>
 
 <div>
