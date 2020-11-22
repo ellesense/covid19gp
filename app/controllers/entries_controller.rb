@@ -6,9 +6,9 @@ class EntriesController < ApplicationController
     if !current_user.admin?
       redirect_to root_path, notice: "You don't have the permission to view this page."
     else
-      @entries = Entry.all
-      @entries_today = Entry.where("created_at >= ?", Time.zone.now.beginning_of_day)
+      @entries = Entry.where("created_at >= ? and created_at <= ?", Time.zone.now.midnight, Time.zone.now.end_of_day)
       @users = User.all  
+      @users_with_no_entries = User.includes(:entries).references(:entries).where('entries.id IS NULL')
     end
 
   end

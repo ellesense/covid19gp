@@ -1,44 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Daily Health Check Responses</h1>
-<p>All users:
-<% @users.each do |u| %>
-  <%= u.name %>
-<% end %>
-</p>
 
-<p>The following people have recorded response today:
-<% @entries_today.each do |e| %>
-  <%= e.user.name  %>
-<% end %>
+<p>
+  Member(s) who has <em>never</em> recorded a response:
+  <% @users_with_no_entries.each do |user| %>
+    <%= user.name %>
+  <% end %>
 </p>
 
 <hr>
 
+<p>
+  <span>Black: All members</span>
+  <br />
+  <span style="color: blue">Blue: Member(s) who have completed daily health check today.</span>
+</p>
+
+<p>
 <% @users.each do |user| %>
-  <p style="font-size: 1.1rem; font-weight: bold"><%= user.name %></p>
+  <%= user.name %>,
+<% end %>
+<br />
+<span style="color: blue">
+  <% @entries.each do |e| %>
+    <%= e.user.name  %>,
+  <% end %>
+</span>
+</p>
 
-  <p>Daily health check responses were completed on the following days:</p>
-  <% user.entries.each do |entry| %>
+<hr>
 
-    <% if entry.created_at.to_date === Time.now.strftime("%Y-%m-%d") %>
-      <p>Submitted.</p>
-    <% end %>
-
-
-  <ul>
-    <li>
-      <%= entry.created_at.localtime.strftime("%b. %d. %Y. %l:%M %p. %A.") %>
-      <br>
-      <% if entry.question_one || entry.question_two || entry.question_three || entry.question_four %>
-        <span style="color: red">Answered "YES" to one of the questions.</span>
-      <% end %>
-
-    </li>
-  </ul>
+<% @entries.each do |entry| %>
+  <p style="font-size: 1.1rem; font-weight: bold"><%= entry.user.name %></p>
+  <%= entry.created_at.localtime.strftime("%b. %d. %Y. %l:%M %p. %A.") %>
+  <% if entry.question_one || entry.question_two || entry.question_three || entry.question_four %>
+    <span style="color: red">Answered "YES" to one of the questions.</span>
+  <% else %>
+    <span>✅</span>
   <% end %>
   <hr>
 <% end %>
-
-<br>
-
