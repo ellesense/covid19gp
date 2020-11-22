@@ -1,11 +1,23 @@
 # Reporting Tool for COVID-19
 
-## functionality
+Website built to avoid piles of daily health check papers from employees.
 
-- add department-specific admins, so each admin can only view the staff in the particular department
-- index page: show department specific users based on which manager logged in.
-- fix admin panel views (esp. username)
+## Installation
 
-## Quick fix to timezone issue
+Follow these easy steps to install and start the app:
 
-`heroku config:add TZ=America/Vancouver`
+### Set up Rails app
+
+First, install the gems required by the application:
+
+    bundle
+
+Next, execute the database migrations/schema setup:
+
+    rails db:setup
+
+### Start the app
+
+    rails s
+
+You can find your app now by pointing your browser to [http://localhost:3000](http://localhost:3000).
