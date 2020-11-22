@@ -14,19 +14,35 @@ class EntriesController < ApplicationController
   end
 
   def show
-    if current_user != @entry.user
-      redirect_to root_path, notice: "You don't have the permission to view this page."      
-    end
+    if !current_user.member
+      redirect_to root_path, notice: "This is a member only page."
+    else 
+      if current_user != @entry.user
+        redirect_to root_path, notice: "You don't have the permission to view this page."      
+      end
+    end      
   end
 
   def new
+    if !current_user.member
+      redirect_to root_path, notice: "This is a member only page."
+    end
+
     @entry = Entry.new
   end
 
   def edit
+    if !current_user.member
+      redirect_to root_path, notice: "This is a member only page."
+    end
+
   end
 
   def create
+    if !current_user.member
+      redirect_to root_path, notice: "This is a member only page."
+    end
+
     @entry = Entry.new(entry_params)
     @entry.user = current_user
 
@@ -40,6 +56,10 @@ class EntriesController < ApplicationController
   end
 
   def update
+    if !current_user.member
+      redirect_to root_path, notice: "This is a member only page."
+    end
+
     respond_to do |format|
       if @entry.update(entry_params)
         format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
@@ -50,6 +70,10 @@ class EntriesController < ApplicationController
   end
 
   def destroy
+    if !current_user.member
+      redirect_to root_path, notice: "This is a member only page."
+    end
+
     @entry.destroy
     respond_to do |format|
       format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
