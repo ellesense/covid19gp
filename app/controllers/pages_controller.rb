@@ -8,6 +8,11 @@ class PagesController < ApplicationController
   def about
   end
 
+  def all_time_responses
+    @entries = Entry.all
+    @users = User.all
+  end
+
   def my_page
     if !current_user.nil?
       @user = current_user

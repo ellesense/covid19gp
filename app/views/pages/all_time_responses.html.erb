@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Time Health Check Responses</h1>
+<h5>Navigate to "Admin Dashboard (No Mobile)" to view responses by each member.</h5>
+<hr>
+
+<% @users.each do |user| %>
+    <p><%= user.name  %></p>
+
+    <% user.entries.each do |entry| %>
+        <%= entry.created_at.localtime.strftime("%b. %d. %Y. %l:%M %p. %A.") %>
+        <% if entry.question_one || entry.question_two || entry.question_three || entry.question_four %>
+            <span style="color: red">Answered "YES" to one of the questions.</span>
+        <% else %>
+            <span>✅</span>
+        <% end %>
+    <% end %>
+<hr>
+<% end %>

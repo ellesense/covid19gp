@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
   get 'pages/about'
+  get 'pages/all_time_responses'
   
   get '/my_page', to: 'pages#my_page'
 
